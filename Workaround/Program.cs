@@ -7,6 +7,26 @@ public class Program
 {
     private static void Main(string[] args)
     {
+        Examples();
+
+        Person person1 = new Person();
+
+        person1.FirstName = "Ömer Faruk";
+        person1.LastName = "Yılmaz";
+        person1.DateOfBirthYear = 1998;
+        person1.NationalIdentity = 12345678910;
+
+
+        PttManager pttManager = new PttManager(new PersonManager());
+
+        pttManager.GiveMask(person1);
+
+
+        Console.ReadLine();
+    }
+
+    public static void Examples()
+    {
         Vatandas vatandas1 = new Vatandas();
         Vatandas vatandas2 = new Vatandas("Ömer Faruk", "Yılmaz", 1998, "12345678910");
 
@@ -57,19 +77,5 @@ public class Program
             Console.WriteLine(s);
         }
 
-        Person person1 = new Person();
-
-        person1.FirstName = "Ömer Faruk";
-        person1.LastName = "Yılmaz";
-        person1.DateOfBirthYear = 1998;
-        person1.NationalIdentity = 12345678910;
-
-
-        PttManager pttManager = new PttManager(new PersonManager());
-
-        pttManager.GiveMask(person1);
-
-
-        Console.ReadLine();
     }
 }
