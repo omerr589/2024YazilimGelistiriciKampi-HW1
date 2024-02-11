@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class PttManager
+    public class PttManager : ISupplierService
     {
         private IApplicantService _applicantService;
         
@@ -27,9 +27,9 @@ namespace Business.Concrete
 
             // Bu yapı sayesinde hem PersonManager hem de Foreigner Manager kullanabilirsin
             if(_applicantService.CheckPerson(person))
-            {
                 Console.WriteLine(person.FirstName + " için Maske Verildi");
-            }
+            else
+                Console.WriteLine(person.FirstName + " için Maske VERİLEMEDİ");
         }
     }
 }
